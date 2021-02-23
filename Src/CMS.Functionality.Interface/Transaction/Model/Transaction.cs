@@ -13,7 +13,7 @@ namespace CMS.Functionality.Interface
 
         public DateTimeOffset TransactionDate { get; set; }
         
-        public decimal Amount { get; set; }
+        public decimal? Amount { get; set; }
         
         public string Currency { get; set; }
     }

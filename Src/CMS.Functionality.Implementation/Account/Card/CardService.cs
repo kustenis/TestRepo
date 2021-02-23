@@ -74,7 +74,7 @@ namespace CMS.Functionality.Implementation
             var spendings = new List<SpendingInfo>();
             foreach (var trnGrp in transactionSpendings.GroupBy(trn => trn.Type))
             {
-                spendings.Add(new SpendingInfo { Type = trnGrp.Key, Amount = trnGrp.Sum(item => item.Amount), AccountNumber = account.Number });
+                spendings.Add(new SpendingInfo { Type = trnGrp.Key, Amount = trnGrp.Sum(item => (item.Amount ?? 0)), AccountNumber = account.Number });
             } 
 
             return new AccountResult<IEnumerable<SpendingInfo>>(success: true, data: spendings);
